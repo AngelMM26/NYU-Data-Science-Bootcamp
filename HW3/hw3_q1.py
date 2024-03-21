@@ -19,10 +19,8 @@ df['temperature'] = df['temperature'].ffill()
 df['precipitation'] = df['precipitation'].ffill()
 df['weather_summary'] = df['weather_summary'].ffill()
 
-week_day = df[(df['day'] != 'Sunday') & (df['day'] != 'Saturday')]
-
 plt.figure(figsize=(10, 5))
-plt.plot(week_day, df['Pedestrians'], color='blue')
+plt.plot(df['day'], df['Pedestrians'], color='blue')
 plt.title('Pedestrian Counts Over Time')
 plt.xlabel('Day')
 plt.ylabel('Pedestrian Count')
