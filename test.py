@@ -6,7 +6,7 @@ df = pd.read_csv('AB_NYC_2019.csv')
 borough = {"Manhattan" : {}, "Brooklyn" : {}, "Bronx" : {}, "Queens" : {}, "Staten Island" : {}}
 
 def updatePrice(borough, neighbourhood_group, neighbourhood, price):
-    if neighbourhood not in borough:
+    if neighbourhood not in borough[neighbourhood_group]:
         borough[neighbourhood_group][neighbourhood] = price
     else:
         borough[neighbourhood_group][neighbourhood] += price
